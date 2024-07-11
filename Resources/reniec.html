@@ -1,117 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YatiYäwi - 1.0 - Dashboard</title>
-  <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1725206134535880705/xxpEtjjN_400x400.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <style>
-    body {
-      background-color: #222;
-      color: #eee;
-      font-family: 'Courier New', Courier, monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-    .card {
-      background-color: #111;
-      border: 2px solid #444;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-    .card-title {
-      color: #0f0;
-    }
-    .btn-primary {
-      background-color: #0f0;
-      border: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .btn-primary:hover {
-      background-color: #0d0;
-    }
-    .proximamente {
-      color: red;
-    }
-    p {
-      color: #eee;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YatiYäwi - 1.0 - Reniec</title>
+    <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1725206134535880705/xxpEtjjN_400x400.png">
+    <style>
+        body {
+            background-color: #222;
+            color: #eee;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            background-color: #111;
+            border: 2px solid #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: left;
+            max-width: 600px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .card-title {
+            color: #0f0;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #0f0;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: #111;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .btn-primary:hover {
+            background-color: #0d0;
+        }
+        p {
+            color: #eee;
+            margin: 5px 0;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #444;
+            background-color: #222;
+            color: #eee;
+            width: calc(100% - 24px);
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-
-  <div class="container">
-    <div class="row justify-content-center mb-4">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://s3.us-west-2.amazonaws.com/joinnus.com/files/2020/tiendas/paxO9xV44SJg6o5.png" class="card-img-top" alt="Option 1">
-          <div class="card-body text-center">
-            <h5 class="card-title">Reniec</h5>
-            <p class="card-text">Consulta la información registrada en el DNI de cualquier persona en Perú.</p>
-            <button class="btn btn-primary" onclick="selectOption('reniec.html')">Seleccionar</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/proxy/skpxN9la3jm0V7b9SxDMvZZq4C1N2tvmFMvPIh58oFRl7ZBq7fCFTfKyReSGH1iyl7O2071pQirzdjLntLDiIka0qOddvaqNTAKrW6YZzUpOOfFGzJwJB07CTXfV_Slg1PbYmlF5lT3Hx4LCrCzG4TY" class="card-img-top" alt="Option 2">
-          <div class="card-body text-center">
-            <h5 class="card-title">Delitos <span class="proximamente">(Proximamente)</span></h5>
-            <p class="card-text">Verifica si una persona tiene antecedentes penales o delitos registrados.</p>
-            <button class="btn btn-primary" onclick="selectOption('opcion2.html')">Seleccionar</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://e.rpp-noticias.io/large/2015/02/02/1466486.jpg" class="card-img-top" alt="Option 3">
-          <div class="card-body text-center">
-            <h5 class="card-title">Sunat <span class="proximamente">(Proximamente)</span></h5>
-            <p class="card-text">Verifica si una persona tiene una empresa registrada por la Sunat.</p>
-            <button class="btn btn-primary" onclick="selectOption('opcion3.html')">Seleccionar</button>
-          </div>
-        </div>
-      </div>
+    <div class="card">
+        <input type="text" id="number" placeholder="Enter DNI number">
+        <button class="btn-primary" onclick="fetchData()">Buscar DNI</button>
+        <img id="image" src="https://via.placeholder.com/150" alt="Image">
+        <h1 class="card-title" id="title">• [#YatiYäwi] • | Doxing Reniec</h1>
+        <p id="title-dni">❰ 🆔 ❱ DOCUMENTOS</p>
+        <p id="dni">DNI →</p>
+        <p id="nombres">NOMBRES →</p>
+        <p id="apellidos">APELLIDOS → </p>
+        <p id="genero">GENERO → </p>
+        <br>
+        <p id="title-nacimiento">❰ 📅 ❱ NACIMIENTO</p>
+        <p id="fecha-nacimiento">FECHA NACIMIENTO → </p>
+        <p id="edad">EDAD → </p>
+        <p id="departamento">DEPARTAMENTO → </p>
+        <p id="provincia">PROVINCIA → </p>
+        <p id="distrito">DISTRITO → </p>
+        <br>
+        <p id="title-datos-personales">❰ 🧑‍💻 ❱ DATOS PERSONALES</p>
+        <p id="estado-civil">ESTADO CIVIL → </p>
+        <p id="fecha-inscripcion">FECHA INSCRIPCION → </p>
+        <p id="fecha-emision">FECHA EMISION → </p>
+        <p id="fecha-caducidad">FECHA CADUCIDAD → </p>
+        <p id="restriccion">RESTRICCION → </p>
+        <br>
+        <p id="title-datos-padres">❰ 👨‍👩‍👧‍👦 ❱ DATOS DE SUS PADRES</p>
+        <p id="padre">PADRE → </p>
+        <p id="madre">MADRE → </p>
+        <br>
+        <p id="title-ubicacion">❰ 📍 ❱ UBICACION</p>
+        <p id="direccion">DIRECCION → </p>
+        <p id="maps">MAPS → </p>
+        <br>
+        <p id="title-ubigeos">❰ 📍 ❱ UBIGEOS</p>
+        <p id="ubigeo-reniec">UBIGEO RENIEC → </p>
+        <p id="ubigeo-inei">UBIGEO INEI → </p>
+        <p id="codigo-postal">CODIGO POSTAL → </p>
+        <button class="btn-primary" onclick="copyData()">Copiar Datos</button>
     </div>
 
-    <div class="row justify-content-center mb-4">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://lirp.cdn-website.com/e623d918/import/clib/generadoresperu_com/dms3rep/multi/opt/2078654-logotipo-aab32-378x123-640w.png" class="card-img-top" alt="Option 4">
-          <div class="card-body text-center">
-            <h5 class="card-title">Generadores <span class="proximamente">(Proximamente)</span></h5>
-            <p class="card-text">Puedes generar tarjeta de creditos, cuentas de netflix, etc.</p>
-            <button class="btn btn-primary" onclick="selectOption('../proximamente.html')">Seleccionar</button>
-          </div>
-        </div>
-      </div>
-      <!-- Add more cards here if needed -->
-    </div>
-  </div>
+    <script>
+        function fetchData() {
+            const dni = document.getElementById('number').value.trim();
+            if (dni) {
+                const apiUrl = `https://sigeun.unam.edu.pe/api/pide/reniec?dni=${dni}`;
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.data.cReniecNombres) {
+                            document.getElementById('dni').textContent = `DNI → ${data.data.cReniecDni}`;
+                            document.getElementById('nombres').textContent = `NOMBRES → ${data.data.cReniecNombres}`;
+                            document.getElementById('apellidos').textContent = `APELLIDOS → ${data.data.cReniecApel_pate} ${data.data.cReniecApel_mate}`;
+                            document.getElementById('genero').textContent = `GENERO → ${data.data.cReniecGenero}`;
+                            document.getElementById('fecha-nacimiento').textContent = `FECHA NACIMIENTO → ${data.data.cReniecFecha_nac}`;
+                            document.getElementById('edad').textContent = `EDAD → ${data.data.cReniecEdad}`;
+                            document.getElementById('departamento').textContent = `DEPARTAMENTO → ${data.data.cReniecUbigeo}`;
+                            document.getElementById('provincia').textContent = `PROVINCIA → ${data.data.cReniecUbigeo}`;
+                            document.getElementById('distrito').textContent = `DISTRITO → ${data.data.cReniecUbigeo}`;
+                            document.getElementById('estado-civil').textContent = `ESTADO CIVIL → ${data.data.cReniecEsta_civi}`;
+                            document.getElementById('fecha-inscripcion').textContent = `FECHA INSCRIPCION → ${data.data.cReniecFecha_insc}`;
+                            document.getElementById('fecha-emision').textContent = `FECHA EMISION → ${data.data.cReniecFecha_emision}`;
+                            document.getElementById('fecha-caducidad').textContent = `FECHA CADUCIDAD → ${data.data.cReniecFecha_caducidad}`;
+                            document.getElementById('restriccion').textContent = `RESTRICCION → ${data.data.cReniecRestricciones}`;
+                            document.getElementById('padre').textContent = `PADRE → ${data.data.cReniecPadre}`;
+                            document.getElementById('madre').textContent = `MADRE → ${data.data.cReniecMadre}`;
+                            document.getElementById('direccion').textContent = `DIRECCION → ${data.data.cReniecDireccion}`;
+                            document.getElementById('maps').textContent = `MAPS → ${data.data.cReniecMaps}`;
+                            document.getElementById('ubigeo-reniec').textContent = `UBIGEO RENIEC → ${data.data.cReniecUbigeo_reniec}`;
+                            document.getElementById('ubigeo-inei').textContent = `UBIGEO INEI → ${data.data.cReniecUbigeo_inei}`;
+                            document.getElementById('codigo-postal').textContent = `CODIGO POSTAL → ${data.data.cReniecCodigo_postal}`;
+                            document.getElementById('image').src = `${data.data.cReniecFotografia}`;
+                        } else {
+                            alert('No se encontraron resultados');
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        alert('Error fetching data. Please try again later.');
+                    });
+            }
+        }
 
-  <script>
-    function selectOption(page) {
-      window.location.href = page;
-    }
-  </script>
+        function copyData() {
+            const elementsToCopy = document.querySelectorAll('.card p');
+            let copyText = '';
+            elementsToCopy.forEach(element => {
+                copyText += `${element.textContent}\n`;
+            });
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+            // Creating a temporary textarea to copy text to clipboard
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = copyText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            alert('Datos copiados al portapapeles.');
+        }
+    </script>
 </body>
 </html>
