@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YatiYäwi - 1.0 - Reniec</title>
+    <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1725206134535880705/xxpEtjjN_400x400.png">
+    <style>
+        body {
+            background-color: #222;
+            color: #eee;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            background-color: #111;
+            border: 2px solid #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: left;
+            max-width: 600px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .card-title {
+            color: #0f0;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #0f0;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: #111;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .btn-primary:hover {
+            background-color: #0d0;
+        }
+        p {
+            color: #eee;
+            margin: 5px 0;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid #444;
+            background-color: #222;
+            color: #eee;
+            width: calc(100% - 24px);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <input type="text" id="number" placeholder="Enter DNI number">
+        <button class="btn-primary" onclick="fetchData()">Buscar DNI</button>
+        <img id="image" src="https://via.placeholder.com/150" alt="Image">
+        <h1 class="card-title" id="title">• [#YatiYäwi] • | Doxing Reniec</h1>
+        <p id="title-dni">❰ 🆔 ❱ DOCUMENTOS</p>
+        <p id="dni">DNI →</p>
+        <p id="nombres">NOMBRES →</p>
+        <p id="apellidos">APELLIDOS → </p>
+        <p id="genero">GENERO → </p>
+        <br>
+        <p id="title-nacimiento">❰ 📅 ❱ NACIMIENTO</p>
+        <p id="fecha-nacimiento">FECHA NACIMIENTO → </p>
+        <p id="edad">EDAD → </p>
+        <p id="departamento">DEPARTAMENTO → </p>
+        <p id="provincia">PROVINCIA → </p>
+        <p id="distrito">DISTRITO → </p>
+        <br>
+        <p id="title-datos-personales">❰ 🧑‍💻 ❱ DATOS PERSONALES</p>
+        <p id="estado-civil">ESTADO CIVIL → </p>
+        <p id="fecha-inscripcion">FECHA INSCRIPCION → </p>
+        <p id="fecha-emision">FECHA EMISION → </p>
+        <p id="fecha-caducidad">FECHA CADUCIDAD → </p>
+        <p id="restriccion">RESTRICCION → </p>
+        <br>
+        <p id="title-datos-padres">❰ 👨‍👩‍👧‍👦 ❱ DATOS DE SUS PADRES</p>
+        <p id="padre">PADRE → </p>
+        <p id="madre">MADRE → </p>
+        <br>
+        <p id="title-ubicacion">❰ 📍 ❱ UBICACION</p>
+        <p id="direccion">DIRECCION → </p>
+        <p id="maps">MAPS → </p>
+        <br>
+        <p id="title-ubigeos">❰ 📍 ❱ UBIGEOS</p>
+        <p id="ubigeo-reniec">UBIGEO RENIEC → </p>
+        <p id="ubigeo-inei">UBIGEO INEI → </p>
+        <p id="codigo-postal">CODIGO POSTAL → </p>
+        <button class="btn-primary" onclick="copyData()">Copiar Datos</button>
+    </div>
+
+    <script>
+        function fetchData() {
+            const dni = document.getElementById('number').value.trim();
+            if (dni) {
+                const apiUrl = `https://sigeun.unam.edu.pe/api/pide/reniec?dni=${dni}`;
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.data.cReniecNombres) {
+                            document.getElementById('dni').textContent = `DNI → ${data.data.cReniecDni}`;
+                            document.getElementById('nombres').textContent = `NOMBRES → ${data.data.cReniecNombres}`;
+                            document.getElementById('apellidos').textContent = `APELLIDOS → ${data.data.cReniecApel_pate} ${data.data.cReniecApel_mate}`;
+                            document.getElementById('genero').textContent = `GENERO → ${data.data.cReniecGenero}`;
+                            document.getElementById('fecha-nacimiento').textContent = `FECHA NACIMIENTO → ${data.data.cReniecFecha_nac}`;
+                            document.getElementById('edad').textContent = `EDAD → ${data.data.cReniecEdad}`;
+                            document.getElementById('departamento').textContent = `DEPARTAMENTO → ${data.data.cReniecUbigeo}`;
+                            document.getElementById('provincia').textContent = `PROVINCIA → ${data.data.cReniecUbigeo}`;
+                            document.getElementById('distrito').textContent = `DISTRITO → ${data.data.cReniecUbigeo}`;
+                            document.getElementById('estado-civil').textContent = `ESTADO CIVIL → ${data.data.cReniecEsta_civi}`;
+                            document.getElementById('fecha-inscripcion').textContent = `FECHA INSCRIPCION → ${data.data.cReniecFecha_insc}`;
+                            document.getElementById('fecha-emision').textContent = `FECHA EMISION → ${data.data.cReniecFecha_emision}`;
+                            document.getElementById('fecha-caducidad').textContent = `FECHA CADUCIDAD → ${data.data.cReniecFecha_caducidad}`;
+                            document.getElementById('restriccion').textContent = `RESTRICCION → ${data.data.cReniecRestricciones}`;
+                            document.getElementById('padre').textContent = `PADRE → ${data.data.cReniecPadre}`;
+                            document.getElementById('madre').textContent = `MADRE → ${data.data.cReniecMadre}`;
+                            document.getElementById('direccion').textContent = `DIRECCION → ${data.data.cReniecDireccion}`;
+                            document.getElementById('maps').textContent = `MAPS → ${data.data.cReniecMaps}`;
+                            document.getElementById('ubigeo-reniec').textContent = `UBIGEO RENIEC → ${data.data.cReniecUbigeo_reniec}`;
+                            document.getElementById('ubigeo-inei').textContent = `UBIGEO INEI → ${data.data.cReniecUbigeo_inei}`;
+                            document.getElementById('codigo-postal').textContent = `CODIGO POSTAL → ${data.data.cReniecCodigo_postal}`;
+                            document.getElementById('image').src = `${data.data.cReniecFotografia}`;
+                        } else {
+                            alert('No se encontraron resultados');
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        alert('Error fetching data. Please try again later.');
+                    });
+            }
+        }
+
+        function copyData() {
+            const elementsToCopy = document.querySelectorAll('.card p');
+            let copyText = '';
+            elementsToCopy.forEach(element => {
+                copyText += `${element.textContent}\n`;
+            });
+
+            // Creating a temporary textarea to copy text to clipboard
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = copyText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            alert('Datos copiados al portapapeles.');
+        }
+    </script>
+</body>
+</html>

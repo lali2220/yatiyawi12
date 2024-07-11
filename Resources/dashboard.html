@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YatiYäwi - 1.0 - Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="https://pbs.twimg.com/profile_images/1725206134535880705/xxpEtjjN_400x400.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #222;
+      color: #eee;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background-color: #111;
+      border: 2px solid #444;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .card-title {
+      color: #0f0;
+    }
+    .btn-primary {
+      background-color: #0f0;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #0d0;
+    }
+    .proximamente {
+      color: red;
+    }
+    p {
+      color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://s3.us-west-2.amazonaws.com/joinnus.com/files/2020/tiendas/paxO9xV44SJg6o5.png" class="card-img-top" alt="Option 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">Reniec</h5>
+            <p class="card-text">Consulta la información registrada en el DNI de cualquier persona en Perú.</p>
+            <button class="btn btn-primary" onclick="selectOption('reniec.html')">Seleccionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://lh3.googleusercontent.com/proxy/skpxN9la3jm0V7b9SxDMvZZq4C1N2tvmFMvPIh58oFRl7ZBq7fCFTfKyReSGH1iyl7O2071pQirzdjLntLDiIka0qOddvaqNTAKrW6YZzUpOOfFGzJwJB07CTXfV_Slg1PbYmlF5lT3Hx4LCrCzG4TY" class="card-img-top" alt="Option 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">Delitos <span class="proximamente">(Proximamente)</span></h5>
+            <p class="card-text">Verifica si una persona tiene antecedentes penales o delitos registrados.</p>
+            <button class="btn btn-primary" onclick="selectOption('opcion2.html')">Seleccionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://e.rpp-noticias.io/large/2015/02/02/1466486.jpg" class="card-img-top" alt="Option 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sunat <span class="proximamente">(Proximamente)</span></h5>
+            <p class="card-text">Verifica si una persona tiene una empresa registrada por la Sunat.</p>
+            <button class="btn btn-primary" onclick="selectOption('opcion3.html')">Seleccionar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://lirp.cdn-website.com/e623d918/import/clib/generadoresperu_com/dms3rep/multi/opt/2078654-logotipo-aab32-378x123-640w.png" class="card-img-top" alt="Option 4">
+          <div class="card-body text-center">
+            <h5 class="card-title">Generadores <span class="proximamente">(Proximamente)</span></h5>
+            <p class="card-text">Puedes generar tarjeta de creditos, cuentas de netflix, etc.</p>
+            <button class="btn btn-primary" onclick="selectOption('../proximamente.html')">Seleccionar</button>
+          </div>
+        </div>
+      </div>
+      <!-- Add more cards here if needed -->
+    </div>
+  </div>
+
+  <script>
+    function selectOption(page) {
+      window.location.href = page;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
